@@ -10,9 +10,11 @@ import static com.codeborne.selenide.Selenide.open;
  */
 public class BaseTest {
 
-    public MainPage openSite() {
+    private static final String SHOP_SITE = "https://www.dns-shop.ru/";
+
+    protected MainPage openSite() {
         selectChrome();
-        open("https://www.dns-shop.ru/");
+        open(SHOP_SITE);
         return new MainPage();
     }
 

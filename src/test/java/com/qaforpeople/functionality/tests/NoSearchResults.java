@@ -9,13 +9,13 @@ import org.testng.annotations.Test;
  */
 public class NoSearchResults extends BaseTest {
 
-    public static final String NO_RESULTS_QUERY = "qweqwe";
+    private static final String NO_RESULTS_QUERY = "qweqwe";
 
     @Test
     public void noSearchResults() {
         openSite()
-                .inputSeearch(NO_RESULTS_QUERY)
+                .inputSearch(NO_RESULTS_QUERY)
                 .clickSearchButton()
-                .checkNoSearchResultsMessage();
+                .checkNoSearchResultsMessage(NO_RESULTS_QUERY);
     }
 }
