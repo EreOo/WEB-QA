@@ -13,13 +13,17 @@ public class BaseTest {
     private static final String SHOP_SITE = "https://www.dns-shop.ru/";
 
     protected MainPage openSite() {
-        selectChrome();
+        selectBrowser();
         open(SHOP_SITE);
         return new MainPage();
     }
 
-    private void selectChrome() {
-        Configuration.browser = "chrome";
-        System.setProperty("selenide.browser", "chrome");
+    /**
+     * set property "browser" from pom.xml
+     */
+    private void selectBrowser() {
+        String browser = System.getProperty("browser");
+        Configuration.browser = browser;
+        System.setProperty("selenide.browser", browser);
     }
 }
