@@ -18,6 +18,7 @@
             <id>Chrome</id>
             <properties>
                 <browser>chrome</browser>
+                <platform.env>pc</platform.env>
             </properties>
         </profile>
     </profiles>

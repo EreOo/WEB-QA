@@ -1,6 +1,7 @@
 package com.qaforpeople.pages;
 
 
+import com.qaforpeople.locators.Locator;
 import com.qaforpeople.pages.blocks.CatalogMenuBlock;
 import org.openqa.selenium.By;
 
@@ -11,6 +12,7 @@ import static com.codeborne.selenide.Selenide.$;
  * Author Vladimir S
  */
 public class MainPage {
+    private Locator locator = new Locator();
 
     public CatalogMenuBlock getCatalogMenuBlock() {
         return new CatalogMenuBlock();
@@ -22,7 +24,7 @@ public class MainPage {
     }
 
     public MainPage clickSearchButton() {
-        $(By.cssSelector("#header-search > div > form > div > span.input-group-btn > button")).click();
+        $(locator.searchButton()).click();
         return this;
     }
 
