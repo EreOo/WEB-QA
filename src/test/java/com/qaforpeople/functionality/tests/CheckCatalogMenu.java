@@ -8,6 +8,7 @@ public class CheckCatalogMenu extends BaseTest {
     @Test
     private void catalogMenu() {
         openSite()
+                .getCatalogMenuBlock()
                 .checkMenuLaptopAndTablet()
                 .checkPcAndStuff()
                 .checkPcAccessories()
