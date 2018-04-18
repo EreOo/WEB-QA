@@ -15,7 +15,8 @@ public class BaseTest {
     protected MainPage openSite() {
         selectBrowser();
         open(SHOP_SITE);
-        return new MainPage();
+        //Click Region ButtonYes
+        return new MainPage().clickRegionButtonYes();
     }
 
     /**
