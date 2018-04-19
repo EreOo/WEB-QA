@@ -33,6 +33,7 @@
                 <configuration>
                     <systemPropertyVariables>
                         <browser>${browser}</browser>
+                        <platform.env>${platform.env}</platform.env>
                         <buildDirectory>${project.build.directory}</buildDirectory>
                     </systemPropertyVariables>
                 </configuration>

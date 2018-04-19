@@ -1,18 +1,33 @@
 package com.qaforpeople.locators;
 
+import com.qaforpeople.locators.interfaces.Locators;
 import com.qaforpeople.locators.platforms.MobileLocators;
 import com.qaforpeople.locators.platforms.WebLocators;
-import org.openqa.selenium.By;
 
 public class Locator {
     private boolean isPc = System.getProperty("platform.env").equals("pc");
+    private Locators locatorInstance;
 
-    public By searchButton() {
+    protected Locators locator() {
         if (isPc) {
-            return WebLocators.getInstance().searchButton();
+            return getWebLocators();
         } else {
-            return MobileLocators.getInstance().searchButton();
+            return getMobileLocators();
         }
+    }
+
+    private Locators getMobileLocators() {
+        if (locatorInstance == null) {
+            locatorInstance = new MobileLocators();
+        }
+        return locatorInstance;
+    }
+
+    private Locators getWebLocators() {
+        if (locatorInstance == null) {
+            locatorInstance = new WebLocators();
+        }
+        return locatorInstance;
     }
 
 }

@@ -1,26 +1,23 @@
 package com.qaforpeople.locators.platforms;
 
+import com.qaforpeople.locators.interfaces.Locators;
 import org.openqa.selenium.By;
 
-public class WebLocators {
-    private static volatile WebLocators instance;
-
-    private WebLocators() {
-
-    }
-
-    public static WebLocators getInstance() {
-        if (instance == null) {
-            synchronized (WebLocators.class) {
-                if (instance == null) {
-                    instance = new WebLocators();
-                }
-            }
-        }
-        return instance;
-    }
+public class WebLocators implements Locators {
 
     public By searchButton() {
         return By.cssSelector("#header-search > div > form > div > span.input-group-btn > button");
+    }
+
+    public By searchTextField() {
+        return By.cssSelector("#header-search > div > form > div > input");
+    }
+
+    public By regionButtonYes() {
+        return By.cssSelector("#header-top > div > div.navbar-left.navbar-header.navbar-menu > ul > li.header-menu-city > div > a.btn.btn-additional");
+    }
+
+    public By noResultMessage() {
+        return By.id("empty-search-results");
     }
 }
