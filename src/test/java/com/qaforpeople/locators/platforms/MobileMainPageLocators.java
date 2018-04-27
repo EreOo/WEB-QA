@@ -1,11 +1,10 @@
 package com.qaforpeople.locators.platforms;
 
 
-import com.qaforpeople.base.BaseLocators;
 import com.qaforpeople.locators.interfaces.MainPageLocators;
 import org.openqa.selenium.By;
 
-public class MobileMainPageLocators implements MainPageLocators, BaseLocators {
+public class MobileMainPageLocators implements MainPageLocators {
 
     public By searchButton() {
         return null;

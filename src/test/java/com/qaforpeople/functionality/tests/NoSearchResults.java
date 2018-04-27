@@ -14,6 +14,7 @@ public class NoSearchResults extends BaseTest {
     @Test
     public void noSearchResults() {
         openSite()
+                .clickRegionButtonYes()
                 .inputSearch(NO_RESULTS_QUERY)
                 .clickSearchButton()
                 .checkNoSearchResultsMessage(NO_RESULTS_QUERY);

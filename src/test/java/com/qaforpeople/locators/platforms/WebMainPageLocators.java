@@ -1,10 +1,10 @@
 package com.qaforpeople.locators.platforms;
 
-import com.qaforpeople.base.BaseLocators;
+
 import com.qaforpeople.locators.interfaces.MainPageLocators;
 import org.openqa.selenium.By;
 
-public class WebMainPageLocators implements MainPageLocators, BaseLocators {
+public class WebMainPageLocators implements MainPageLocators {
 
     public By searchButton() {
         return By.cssSelector("#header-search > div > form > div > span.input-group-btn > button");

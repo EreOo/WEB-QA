@@ -2,8 +2,10 @@ package com.qaforpeople.base;
 
 import com.codeborne.selenide.Configuration;
 import com.qaforpeople.pages.MainPage;
+import org.testng.annotations.AfterTest;
 
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 /**
  * Author Vladimir S
@@ -15,8 +17,7 @@ public class BaseTest {
     protected MainPage openSite() {
         selectBrowser();
         open(SHOP_SITE);
-        //Click Region ButtonYes
-        return new MainPage().clickRegionButtonYes();
+        return new MainPage();
     }
 
     /**
@@ -26,5 +27,10 @@ public class BaseTest {
         String browser = System.getProperty("browser");
         Configuration.browser = browser;
         System.setProperty("selenide.browser", browser);
+    }
+
+    @AfterTest
+    public void close() {
+        getWebDriver().close();
     }
 }

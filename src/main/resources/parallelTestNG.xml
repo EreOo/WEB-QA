@@ -1,0 +1,13 @@
+<suite name="implemented" verbose="1" parallel="tests" thread-count="2">
+
+    <test name="Catalog_Menu">
+        <classes>
+            <class name="com.qaforpeople.functionality.tests.CheckCatalogMenu"/>
+        </classes>
+    </test>
+    <test name="No_Search_Results">
+        <classes>
+            <class name="com.qaforpeople.functionality.tests.NoSearchResults"/>
+        </classes>
+    </test>
+</suite>
