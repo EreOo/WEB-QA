@@ -11,4 +11,6 @@ public interface MainPageLocators extends BaseLocators {
     By regionButtonYes();
 
     By noResultMessage();
+
+    By emptyCart();
 }

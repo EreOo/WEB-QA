@@ -21,4 +21,8 @@ public class WebMainPageLocators implements MainPageLocators {
     public By noResultMessage() {
         return By.id("empty-search-results");
     }
+
+    public By emptyCart() {
+        return By.cssSelector("#header-top > div > div.navbar-left.navbar-header.navbar-menu > div > div.basic-controls > div.right-controls.mobile-header-btns > a");
+    }
 }

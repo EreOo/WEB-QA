@@ -5,6 +5,7 @@ import com.qaforpeople.base.BasePage;
 import com.qaforpeople.locators.LocatorsService;
 import com.qaforpeople.locators.interfaces.MainPageLocators;
 import com.qaforpeople.pages.blocks.CatalogMenuBlock;
+import org.testng.Assert;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
@@ -43,4 +44,8 @@ public class MainPage extends BasePage {
         return this;
     }
 
+    public MainPage checkEmptyCartLink() {
+        Assert.assertEquals($(locator().emptyCart()).getAttribute("href"), "https://www.dns-shop.ru/order/begin/");
+        return this;
+    }
 }

@@ -1,4 +1,4 @@
-package com.qaforpeople.functionality.tests;
+package com.qaforpeople.functionality.example;
 
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;

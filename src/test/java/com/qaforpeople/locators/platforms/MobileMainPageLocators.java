@@ -21,5 +21,9 @@ public class MobileMainPageLocators implements MainPageLocators {
     public By noResultMessage() {
         return null;
     }
+
+    public By emptyCart() {
+        return null;
+    }
 }
 
