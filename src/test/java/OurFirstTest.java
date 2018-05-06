@@ -12,12 +12,12 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 public class OurFirstTest {
 
     @BeforeTest
-    public void settings() {
+    private void settings() {
         Configuration.browser = "chrome";
     }
 
     @Test
-    public void test() {
+    public void checkNoSearchResult() {
         open("https://www.dns-shop.ru/");
         $(By.cssSelector("#header-search > div > form > div > input")).setValue("qweqwe");
         $(By.cssSelector("#header-search > div > form > div > span.input-group-btn > button")).click();
@@ -25,7 +25,7 @@ public class OurFirstTest {
     }
 
     @AfterTest
-    public void close() {
+    private void close() {
         getWebDriver().close();
     }
 }
