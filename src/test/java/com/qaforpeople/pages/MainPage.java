@@ -28,19 +28,13 @@ public class MainPage extends BasePage {
         return this;
     }
 
-    public MainPage clickSearchButton() {
+    public SearchResultPage clickSearchButton() {
         $(locator().searchButton()).click();
-        return this;
+        return new SearchResultPage();
     }
 
     public MainPage clickRegionButtonYes() {
         $(locator().regionButtonYes()).click();
-        return this;
-    }
-
-    public MainPage checkNoSearchResultsMessage(String s) {
-        String noResultText = String.format("К сожалению, по запросу «%s» мы ничего не смогли найти.", s);
-        $(locator().noResultMessage()).shouldHave(text(noResultText));
         return this;
     }
 

@@ -18,10 +18,6 @@ public class MobileMainPageLocators implements MainPageLocators {
         return null;
     }
 
-    public By noResultMessage() {
-        return null;
-    }
-
     public By emptyCart() {
         return null;
     }

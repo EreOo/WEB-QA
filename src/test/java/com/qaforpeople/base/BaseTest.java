@@ -26,7 +26,6 @@ public class BaseTest {
     private void selectBrowser() {
         String browser = System.getProperty("browser");
         Configuration.browser = browser;
-        System.setProperty("selenide.browser", browser);
     }
 
     @AfterTest
