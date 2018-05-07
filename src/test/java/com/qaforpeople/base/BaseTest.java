@@ -24,12 +24,15 @@ public class BaseTest {
      * set property "browser" from pom.xml
      */
     private void selectBrowser() {
-        String browser = System.getProperty("browser");
-        Configuration.browser = browser;
+        Configuration.browser = System.getProperty("browser");
     }
 
+    /**
+     * Selenide has shutdown driver method but I have issue:
+     * Browsers don't close and CPU're working 100% after few test runs.
+     */
     @AfterTest
-    public void close() {
+    public void closeDriver() {
         getWebDriver().close();
     }
 }

@@ -1,4 +1,4 @@
-<suite name="implemented" verbose="1" parallel="tests" thread-count="2">
+<suite name="implemented" verbose="1" parallel="tests" thread-count="3">
 
     <test name="Catalog_Menu">
         <classes>
@@ -8,6 +8,11 @@
     <test name="No_Search_Results">
         <classes>
             <class name="com.qaforpeople.functionality.tests.NoSearchResults"/>
+        </classes>
+    </test>
+    <test name="Empty_Cart_Link">
+        <classes>
+            <class name="com.qaforpeople.functionality.tests.CheckEmptyCartLink"/>
         </classes>
     </test>
 </suite>
