@@ -38,6 +38,14 @@
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
@@ -52,7 +60,7 @@
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
-            <version>4.9.1</version>
+            <version>4.11.2</version>
             <scope>test</scope>
         </dependency>
 
@@ -61,6 +69,19 @@
             <artifactId>java-client</artifactId>
             <version>4.1.2</version>
         </dependency>
+
+        <!--Need for create XML listener-->
+        <dependency>
+        <groupId>org.reflections</groupId>
+        <artifactId>reflections</artifactId>
+        <version>0.9.11</version>
+        <exclusions>
+            <exclusion>
+                <artifactId>guava</artifactId>
+                <groupId>com.google.guava</groupId>
+            </exclusion>
+        </exclusions>
+    </dependency>
 
     </dependencies>
 </project>
