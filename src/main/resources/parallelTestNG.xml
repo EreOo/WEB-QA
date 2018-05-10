@@ -2,17 +2,17 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="implemented" verbose="1" parallel="tests" thread-count="3">
 
-    <test name="Catalog_Menu">
+    <test name="AboutMainPageText">
         <classes>
             <class name="com.qaforpeople.functionality.tests.AboutMainPageText"/>
         </classes>
     </test>
-    <test name="No_Search_Results">
+    <test name="InputFieldsText">
         <classes>
             <class name="com.qaforpeople.functionality.tests.InputFieldsText"/>
         </classes>
     </test>
-    <test name="Empty_Cart_Link">
+    <test name="AboutSecondPageText">
         <classes>
             <class name="com.qaforpeople.functionality.tests.AboutSecondPageText"/>
         </classes>

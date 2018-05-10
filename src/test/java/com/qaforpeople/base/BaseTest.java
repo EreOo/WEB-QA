@@ -12,7 +12,7 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
  */
 public class BaseTest {
 
-    private static final String SITE_URL = "http://localhost:4000/main-page";
+    private static final String SITE_URL = "https://ereoo.github.io/main-page";
 
     protected MainPage openSite() {
         selectBrowser();
