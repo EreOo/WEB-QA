@@ -6,19 +6,15 @@ import org.openqa.selenium.By;
 
 public class WebMainPageLocators implements MainPageLocators {
 
-    public By searchButton() {
-        return By.cssSelector("#header-search > div > form > div > span.input-group-btn > button");
+    public By aboutText() {
+        return By.className("about-text");
     }
 
-    public By searchTextField() {
-        return By.cssSelector("#header-search > div > form > div > input");
+    public By redirectButton() {
+        return By.id("go_second");
     }
 
-    public By regionButtonYes() {
-        return By.cssSelector("#header-top > div > div.navbar-left.navbar-header.navbar-menu > ul > li.header-menu-city > div > a.btn.btn-additional");
-    }
-
-    public By emptyCart() {
-        return By.cssSelector("#header-top > div > div.navbar-left.navbar-header.navbar-menu > div > div.basic-controls > div.right-controls.mobile-header-btns > a");
+    public By inputFieldsBlock() {
+        return By.id("forms_input");
     }
 }

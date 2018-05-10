@@ -12,11 +12,11 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
  */
 public class BaseTest {
 
-    private static final String SHOP_SITE = "https://www.dns-shop.ru/";
+    private static final String SITE_URL = "http://localhost:4000/main-page";
 
     protected MainPage openSite() {
         selectBrowser();
-        open(SHOP_SITE);
+        open(SITE_URL);
         return new MainPage();
     }
 

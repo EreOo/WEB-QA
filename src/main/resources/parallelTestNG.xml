@@ -4,17 +4,17 @@
 
     <test name="Catalog_Menu">
         <classes>
-            <class name="com.qaforpeople.functionality.tests.CheckCatalogMenu"/>
+            <class name="com.qaforpeople.functionality.tests.AboutMainPageText"/>
         </classes>
     </test>
     <test name="No_Search_Results">
         <classes>
-            <class name="com.qaforpeople.functionality.tests.NoSearchResults"/>
+            <class name="com.qaforpeople.functionality.tests.InputFieldsText"/>
         </classes>
     </test>
     <test name="Empty_Cart_Link">
         <classes>
-            <class name="com.qaforpeople.functionality.tests.CheckEmptyCartLink"/>
+            <class name="com.qaforpeople.functionality.tests.AboutSecondPageText"/>
         </classes>
     </test>
 </suite>
