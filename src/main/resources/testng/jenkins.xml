@@ -1,0 +1,5 @@
+<suite name="implemented" verbose="1" parallel="tests" thread-count="2">
+    <listeners>
+        <listener class-name="com.qaforpeople.listeners.CreateXmlForRunInParallel"/>
+    </listeners>
+</suite>
