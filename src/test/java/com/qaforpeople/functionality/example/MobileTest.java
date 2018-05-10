@@ -14,8 +14,7 @@ import java.net.URL;
 import static com.codeborne.selenide.Selenide.$;
 
 public class MobileTest {
-
-    @BeforeTest
+    
     private void before() throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
         File app = new File("C:/Users/Vladimir/Documents/DNSShop.apk");
@@ -25,7 +24,7 @@ public class MobileTest {
         AndroidDriver driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"), caps);
     }
 
-    @Test
+
     public void checkCity() {
         $(MobileBy.AndroidUIAutomator("3455345")).click();
     }
