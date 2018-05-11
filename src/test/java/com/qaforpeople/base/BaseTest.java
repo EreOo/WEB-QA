@@ -28,14 +28,5 @@ public class BaseTest {
         //It's localhost - but jenkins in container and it need your local ip
         Configuration.remote = "http://169.254.173.3:4444/wd/hub";
     }
-
-//    TODO delete it.
-    /**
-     * Selenide has shutdown driver method but I have issue:
-     * Browsers don't close and CPU're working 100% after few test runs.
-     */
-    @AfterTest
-    public void closeDriver() {
-        getWebDriver().close();
-    }
+    
 }
