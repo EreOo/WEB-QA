@@ -25,16 +25,15 @@ public class BaseTest {
      */
     private void selectBrowser() {
         Configuration.browser = System.getProperty("browser");
-        //TODO refactoring!
-        Configuration.remote = "http://localhost:4444/wd/hub";
     }
 
+//    TODO delete it.
     /**
      * Selenide has shutdown driver method but I have issue:
      * Browsers don't close and CPU're working 100% after few test runs.
      */
-//    @AfterTest
-//    public void closeDriver() {
-//        getWebDriver().close();
-//    }
+    @AfterTest
+    public void closeDriver() {
+        getWebDriver().close();
+    }
 }
