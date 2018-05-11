@@ -35,7 +35,7 @@ public class CreateXmlForRunInParallel implements IAlterSuiteListener {
             modifySuite.setTests(xmlTestList);
 
             //TODO get property from pom.xml now it's hardcode.
-            modifySuite.setThreadCount(1);
+            modifySuite.setThreadCount(3);
 
             System.out.println(modifySuite.toXml());
         }
