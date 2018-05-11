@@ -2,7 +2,14 @@ package com.qaforpeople.base;
 
 import com.codeborne.selenide.Configuration;
 import com.qaforpeople.pages.MainPage;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterTest;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
@@ -24,10 +31,10 @@ public class BaseTest {
      * set property "browser" from pom.xml
      */
     private void selectBrowser() {
-     
         //It's localhost - but jenkins in container and it need your local ip
         Configuration.remote = "http://169.254.243.36:4444/wd/hub";
         Configuration.browser = System.getProperty("browser");
+        System.setProperty("platform", "MAC");
     }
 
 }
