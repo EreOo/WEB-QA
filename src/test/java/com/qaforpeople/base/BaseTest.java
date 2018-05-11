@@ -15,6 +15,7 @@ public class BaseTest {
     protected MainPage openSite() {
         selectBrowser();
         open(SITE_URL);
+        System.out.println("!!!!!!!!!!____________OPEN SITE__________!!!!!!!!!!!!!!");
         return new MainPage();
     }
 

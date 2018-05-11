@@ -9,5 +9,8 @@
         <module name="WEB-QA" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="WEB-QA" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>

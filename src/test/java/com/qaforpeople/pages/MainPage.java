@@ -29,6 +29,7 @@ public class MainPage extends BasePage {
     }
 
     public MainPage checkAboutText(String text) {
+        System.out.println("!!!!!!!!!!____________MAIN PAGE CREATE__________!!!!!!!!!!!!!!");
         $(locator().aboutText()).shouldHave(text(text));
         return this;
     }
