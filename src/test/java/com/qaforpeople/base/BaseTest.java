@@ -33,7 +33,7 @@ public class BaseTest {
     private void selectBrowser() {
         //It's localhost - but jenkins in container and it need your local ip
         Configuration.remote = "http://169.254.243.36:4444/wd/hub";
-        Configuration.browser = System.getProperty("browser");
+        Configuration.browser = "chrome";
         System.setProperty("platform", "MAC");
     }
 
