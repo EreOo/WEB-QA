@@ -25,6 +25,8 @@ public class BaseTest {
      */
     private void selectBrowser() {
         Configuration.browser = System.getProperty("browser");
+        //It's localhost - but jenkins in container and it need your local ip
+        Configuration.remote = "http://169.254.173.3:4444/wd/hub";
     }
 
 //    TODO delete it.
