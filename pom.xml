@@ -17,9 +17,9 @@
         <profile>
             <id>Chrome</id>
             <properties>
-                <browser>chrome</browser>
+                <browser>${env.BROWSER}</browser>
                 <testNGPath>${basedir}/src/main/resources/testng/jenkins.xml</testNGPath>
-                <platform.env>pc</platform.env>
+                <platform.env>${env.PLATFORM}</platform.env>
             </properties>
         </profile>
     </profiles>
@@ -39,7 +39,6 @@
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -55,12 +54,26 @@
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>2.10</version>
                 <configuration>
-                    <!--<argLine>-XX:PermSize=256m -XX:MaxPermSize=1024m</argLine>-->
-                    <!--<skip>false</skip>-->
+                    <argLine>-XX:PermSize=256m -XX:MaxPermSize=1024m</argLine>
+                    <skip>false</skip>
                     <suiteXmlFiles>
                         <suiteXmlFile>${testNGPath}</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>integration-test</id>
+                        <goals>
+                            <goal>integration-test</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>verify</id>
+                        <goals>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
