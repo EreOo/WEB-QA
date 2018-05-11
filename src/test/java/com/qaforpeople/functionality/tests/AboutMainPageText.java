@@ -10,5 +10,7 @@ public class AboutMainPageText extends BaseTest {
     private void checkAboutMainPageText() {
         openSite()
                 .checkAboutText(TEXT);
+        System.out.println("!!!!!!!!!!____________TEST 1 END__________!!!!!!!!!!!!!!");
+
     }
 }

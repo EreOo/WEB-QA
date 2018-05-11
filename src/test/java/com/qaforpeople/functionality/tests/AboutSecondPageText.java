@@ -11,7 +11,7 @@ public class AboutSecondPageText extends BaseTest {
         openSite()
                 .clickRedirectToSecondButton()
                 .checkAboutText(TEXT);
-        System.out.println("!!!!!!!!!!____________TEST END__________!!!!!!!!!!!!!!");
+        System.out.println("!!!!!!!!!!____________TEST 2 END __________!!!!!!!!!!!!!!");
     }
 
 }

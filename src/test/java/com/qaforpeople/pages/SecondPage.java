@@ -14,6 +14,8 @@ public class SecondPage extends BasePage {
     }
 
     public SecondPage checkAboutText(String text) {
+        System.out.println("!!!!!!!!!!____________SECOND PAGE__________!!!!!!!!!!!!!!");
+
         $(locator().aboutText()).shouldHave(text(text));
         return this;
     }

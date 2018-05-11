@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 public class WebMainPageLocators implements MainPageLocators {
 
     public By aboutText() {
+        System.out.println("!!!!!!!!!!____________MAIN P LOCATOR SERVICE WORK__________!!!!!!!!!!!!!!");
         return By.className("about-text");
     }
 

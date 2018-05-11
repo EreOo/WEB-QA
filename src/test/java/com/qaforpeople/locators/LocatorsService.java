@@ -15,7 +15,6 @@ import com.qaforpeople.locators.platforms.WebSecondPageLocators;
  public final static MainPageLocators ANOTHER_PAGE_LOCATORS = System.getProperty("platform.env").equals("pc") ? new WebAnotherPageLocators() : new MobileAnotherPageLocators();
  */
 public class LocatorsService {
-
     public static final MainPageLocators MAIN_PAGE_LOCATORS = System.getProperty("platform.env")
             .equals("pc") ? new WebMainPageLocators() : new MobileMainPageLocators();
     public static final InputFieldsBlockLocators INPUT_FIELDS_BLOCK_LOCATORS = new WebInputFieldsBlockLocators();

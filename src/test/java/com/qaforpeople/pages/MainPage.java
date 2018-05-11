@@ -15,6 +15,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class MainPage extends BasePage {
 
     public MainPageLocators locator() {
+        System.out.println("!!!!!!!!!!____________MAIN P LOCATOR CREATE__________!!!!!!!!!!!!!!");
         return LocatorsService.MAIN_PAGE_LOCATORS;
     }
 

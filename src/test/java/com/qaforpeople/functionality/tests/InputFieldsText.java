@@ -15,5 +15,7 @@ public class InputFieldsText extends BaseTest {
                 .getInputFieldsBlock()
                 .checkNameLabelText()
                 .checkNameInputText();
+        System.out.println("!!!!!!!!!!____________TEST 3 END__________!!!!!!!!!!!!!!");
+
     }
 }
