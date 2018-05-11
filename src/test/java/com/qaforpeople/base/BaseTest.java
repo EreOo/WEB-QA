@@ -24,9 +24,10 @@ public class BaseTest {
      * set property "browser" from pom.xml
      */
     private void selectBrowser() {
-        Configuration.browser = System.getProperty("browser");
+     
         //It's localhost - but jenkins in container and it need your local ip
         Configuration.remote = "http://169.254.243.36:4444/wd/hub";
+        Configuration.browser = System.getProperty("browser");
     }
 
 }
