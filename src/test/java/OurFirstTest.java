@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class OurFirstTest {
 
@@ -17,15 +16,14 @@ public class OurFirstTest {
     }
 
     @Test
-    public void checkNoSearchResult() {
-        open("https://www.dns-shop.ru/");
-        $(By.cssSelector("#header-search > div > form > div > input")).setValue("qweqwe");
-        $(By.cssSelector("#header-search > div > form > div > span.input-group-btn > button")).click();
-        $(By.id("empty-search-results")).shouldHave(text("К сожалению, по запросу «qweqwe» мы ничего не смогли найти."));
+    public void checkSecondPageAboutText() {
+        open("https://ereoo.github.io/main-page");
+        $(By.id("go_second")).click();
+        $(By.id("about")).shouldHave(text("This is second test page \"SecondPage\". First test page is \"MainPage\". This is a test page filled with common HTML elements. Feel free to practice create your auto-tests."));
     }
 
     @AfterTest
     private void close() {
-        getWebDriver().close();
+        //This code will be implemented after test.
     }
 }
