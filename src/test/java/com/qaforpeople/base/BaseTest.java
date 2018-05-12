@@ -11,7 +11,6 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
  * Author Vladimir S
  */
 public class BaseTest {
-
     private static final String URL_SITE = "https://ereoo.github.io/main-page";
 
     public MainPage openSite() {
