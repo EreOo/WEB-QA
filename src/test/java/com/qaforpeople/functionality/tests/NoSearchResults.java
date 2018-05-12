@@ -9,13 +9,12 @@ import org.testng.annotations.Test;
  */
 public class NoSearchResults extends BaseTest {
 
-    private static final String NO_RESULTS_QUERY = "qweqwe";
+    private static final String ABOUT_TEXT = "This is second test page \"SecondPage\". First test page is \"MainPage\". This is a test page filled with common HTML elements. Feel free to practice create your auto-tests.";
 
     @Test
-    public void noSearchResults() {
+    public void checkSecondPageAboutText() {
         openSite()
-                .inputSearch(NO_RESULTS_QUERY)
-                .clickSearchButton()
-                .checkNoSearchResultsMessage(NO_RESULTS_QUERY);
+                .clickRedirectToSecondPageButton()
+                .checkAboutText(ABOUT_TEXT);
     }
 }

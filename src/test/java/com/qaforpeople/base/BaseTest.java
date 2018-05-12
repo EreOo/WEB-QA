@@ -12,11 +12,11 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
  */
 public class BaseTest {
 
-    private static final String SHOP_SITE = "https://www.dns-shop.ru/";
+    private static final String URL_SITE = "https://ereoo.github.io/main-page";
 
     public MainPage openSite() {
         selectChrome();
-        open(SHOP_SITE);
+        open(URL_SITE);
         return new MainPage();
     }
 

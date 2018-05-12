@@ -8,16 +8,10 @@ import static com.codeborne.selenide.Selenide.$;
  * Author Vladimir S
  */
 public class MainPage {
-    private static final By SEARCH_FIELD = By.cssSelector("#header-search > div > form > div > input");
-    private static final By SEARCH_BUTTON = By.cssSelector("#header-search > div > form > div > span.input-group-btn > button");
+    private static final By SECOND_PAGE_BUTTON_LOCATOR = By.id("go_second");
 
-    public MainPage inputSearch(String query) {
-        $(SEARCH_FIELD).setValue(query);
-        return this;
-    }
-
-    public SearchResultPage clickSearchButton() {
-        $(SEARCH_BUTTON).click();
-        return new SearchResultPage();
+    public SecondPage clickRedirectToSecondPageButton() {
+        $(SECOND_PAGE_BUTTON_LOCATOR).click();
+        return new SecondPage();
     }
 }
