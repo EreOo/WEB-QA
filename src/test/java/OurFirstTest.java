@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class OurFirstTest {
 
@@ -24,6 +25,6 @@ public class OurFirstTest {
 
     @AfterTest
     private void close() {
-        //This code will be implemented after test.
+        getWebDriver().close();
     }
 }
