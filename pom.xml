@@ -32,12 +32,27 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.16</version>
                 <configuration>
+                    <skip>true</skip>
+                    <testFailureIgnore>false</testFailureIgnore>
+                    <argLine>-Xmx${mavenSurefirePlugin.Xmx}
+                        -XX:PermSize=${mavenSurefirePlugin.PermSize}
+                        -XX:MaxPermSize=${mavenSurefirePlugin.MaxPermSize}
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                        -Dallure.max.title.length=1000
+                    </argLine>
                     <systemPropertyVariables>
                         <browser>${browser}</browser>
                         <device>${device}</device>
                         <buildDirectory>${project.build.directory}</buildDirectory>
                     </systemPropertyVariables>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>1.8.10</version>
+                    </dependency>
+                </dependencies>
             </plugin>
 
 
