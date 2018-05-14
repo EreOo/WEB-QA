@@ -17,9 +17,9 @@
         <profile>
             <id>Chrome</id>
             <properties>
-                <browser>chrome</browser>
+                <browser>${env.BROWSER}</browser>
                 <testNGPath>${basedir}/src/main/resources/testng/jenkins.xml</testNGPath>
-                <platform.env>pc</platform.env>
+                <platform.env>${env.PLATFORM}</platform.env>
             </properties>
         </profile>
     </profiles>
