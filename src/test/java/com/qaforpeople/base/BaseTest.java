@@ -29,7 +29,7 @@ public class BaseTest {
 
         // ITS WORK GETENV!!!!
         Configuration.browser = System.getProperty("browser");
-        System.setProperty("device", System.getProperty("device"));
+
         System.setProperty("platform", "MAC");
 
 
