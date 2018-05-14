@@ -27,6 +27,13 @@ public class BaseTest {
         Configuration.remote = "http://169.254.243.36:4444/wd/hub";
         Configuration.browser = System.getProperty("browser");
         System.setProperty("platform", "MAC");
+
+        System.out.println("!!!!!!!!!!____________" + Configuration.remote + "__________!!!!!!!!!!!!!!");
+        System.out.println("!!!!!!!!!!____________" + Configuration.browser + "__________!!!!!!!!!!!!!!");
+        System.out.println("!!!!!!!!!!____________" + System.getProperty("browser") + "__________!!!!!!!!!!!!!!");
+        System.out.println("!!!!!!!!!!____________" + System.getProperty("platform") + "__________!!!!!!!!!!!!!!");
+
+
     }
 
 }
