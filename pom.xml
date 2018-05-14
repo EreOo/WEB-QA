@@ -11,6 +11,7 @@
     <!--Default properties-->
     <properties>
         <browser>firefox</browser>
+        <platform.env>pc</platform.env>
     </properties>
 
     <profiles>
