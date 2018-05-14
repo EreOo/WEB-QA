@@ -16,7 +16,7 @@ import com.qaforpeople.locators.platforms.WebSecondPageLocators;
  */
 public class LocatorsService {
     public static final MainPageLocators MAIN_PAGE_LOCATORS =
-            System.getProperty("platform.env")
+            System.getProperty("device")
                     .equals("pc") ? new WebMainPageLocators() : new MobileMainPageLocators();
     public static final InputFieldsBlockLocators INPUT_FIELDS_BLOCK_LOCATORS = new WebInputFieldsBlockLocators();
     public static final SecondPageLocators TEXT_PAGE_LOCATORS = new WebSecondPageLocators();
