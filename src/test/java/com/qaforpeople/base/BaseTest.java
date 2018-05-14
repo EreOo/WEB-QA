@@ -27,18 +27,18 @@ public class BaseTest {
         Configuration.remote = "http://169.254.243.36:4444/wd/hub";
 
         System.out.println("!!!!!!!!!!____________SP" + System.getProperty("browser") + "__________!!!!!!!!!!!!!!");
-        System.out.println("!!!!!!!!!!____________SP" + System.getProperty("platform.env") + "__________!!!!!!!!!!!!!!");
+        System.out.println("!!!!!!!!!!____________SP" + System.getProperty("env") + "__________!!!!!!!!!!!!!!");
 
         // ITS WORK GETENV!!!!
         Configuration.browser = System.getenv("BROWSER");
-        System.setProperty("platform.env", System.getenv("PLATFORM"));
+        System.setProperty("env", System.getenv("PLATFORM"));
         System.setProperty("platform", "MAC");
 
         System.out.println("!!!!!!!!!!____________" + Configuration.remote + "__________!!!!!!!!!!!!!!");
         System.out.println("!!!!!!!!!!____________" + Configuration.browser + "__________!!!!!!!!!!!!!!");
         System.out.println("!!!!!!!!!!____________" + System.getProperty("browser") + "__________!!!!!!!!!!!!!!");
         System.out.println("!!!!!!!!!!____________" + System.getProperty("platform") + "__________!!!!!!!!!!!!!!");
-        System.out.println("!!!!!!!!!!____________" + System.getProperty("platform.env") + "__________!!!!!!!!!!!!!!");
+        System.out.println("!!!!!!!!!!____________" + System.getProperty("env") + "__________!!!!!!!!!!!!!!");
 
 
     }
