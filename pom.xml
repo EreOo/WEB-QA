@@ -19,7 +19,7 @@
             <properties>
                 <browser>chrome</browser>
                 <testNGPath>${basedir}/src/main/resources/testng/jenkins.xml</testNGPath>
-                <platform.env>pc</platform.env>
+                <env>pc</env>
             </properties>
         </profile>
     </profiles>
@@ -34,7 +34,7 @@
                 <configuration>
                     <systemPropertyVariables>
                         <browser>${browser}</browser>
-                        <platform.env>${platform.env}</platform.env>
+                        <env>${env}</env>
                         <buildDirectory>${project.build.directory}</buildDirectory>
                     </systemPropertyVariables>
                 </configuration>
