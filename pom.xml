@@ -17,9 +17,9 @@
         <profile>
             <id>Chrome</id>
             <properties>
-                <browser>${env.BROWSER}</browser>
+                <browser>chrome</browser>
                 <testNGPath>${basedir}/src/main/resources/testng/jenkins.xml</testNGPath>
-                <platform.env>${env.PLATFORM}</platform.env>
+                <platform.env>pc</platform.env>
             </properties>
         </profile>
     </profiles>
@@ -46,20 +46,6 @@
                     <source>1.7</source>
                     <target>1.7</target>
                 </configuration>
-                <executions>
-                    <execution>
-                        <id>integration-test</id>
-                        <goals>
-                            <goal>integration-test</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>verify</id>
-                        <goals>
-                            <goal>verify</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
 
             <!--Plugin for create XML-->
