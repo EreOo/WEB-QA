@@ -1,32 +1,159 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<project xmlns="http://maven.apache.org/POM/4.0.0"-->
+<!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">-->
+<!--<modelVersion>4.0.0</modelVersion>-->
+
+<!--<groupId>WEB-QA</groupId>-->
+<!--<artifactId>WEB-QA</artifactId>-->
+<!--<version>1.0-SNAPSHOT</version>-->
+
+<!--&lt;!&ndash;Default properties&ndash;&gt;-->
+<!--<properties>-->
+<!--<browser>firefox</browser>-->
+<!--</properties>-->
+
+<!--<profiles>-->
+<!--<profile>-->
+<!--<id>Chrome</id>-->
+<!--<properties>-->
+<!--<browser>chrome</browser>-->
+<!--<testNGPath>${basedir}/src/main/resources/testng/jenkins.xml</testNGPath>-->
+<!--<platform.env>pc</platform.env>-->
+<!--</properties>-->
+<!--</profile>-->
+<!--</profiles>-->
+
+<!--&lt;!&ndash;Plugin set custom properties&ndash;&gt;-->
+<!--<build>-->
+<!--<plugins>-->
+            <!--<plugin>-->
+<!--<groupId>org.apache.maven.plugins</groupId>-->
+<!--<artifactId>maven-surefire-plugin</artifactId>-->
+<!--<version>2.16</version>-->
+<!--<configuration>-->
+<!--<systemPropertyVariables>-->
+<!--<browser>${browser}</browser>-->
+<!--<platform.env>${platform.env}</platform.env>-->
+<!--<buildDirectory>${project.build.directory}</buildDirectory>-->
+<!--</systemPropertyVariables>-->
+<!--</configuration>-->
+            <!--</plugin>-->
+
+
+<!--&lt;!&ndash;Plugin for create XML&ndash;&gt;-->
+<!--<plugin>-->
+<!--<groupId>org.apache.maven.plugins</groupId>-->
+<!--<artifactId>maven-failsafe-plugin</artifactId>-->
+<!--<version>2.10</version>-->
+<!--<configuration>-->
+<!--<argLine>-XX:PermSize=256m -XX:MaxPermSize=1024m</argLine>-->
+<!--<skip>false</skip>-->
+<!--<suiteXmlFiles>-->
+<!--<suiteXmlFile>${testNGPath}</suiteXmlFile>-->
+<!--</suiteXmlFiles>-->
+<!--</configuration>-->
+<!--<executions>-->
+<!--<execution>-->
+<!--<id>integration-test</id>-->
+<!--<goals>-->
+<!--<goal>integration-test</goal>-->
+<!--</goals>-->
+<!--</execution>-->
+<!--<execution>-->
+<!--<id>verify</id>-->
+<!--<goals>-->
+<!--<goal>verify</goal>-->
+<!--</goals>-->
+<!--</execution>-->
+<!--</executions>-->
+<!--</plugin>-->
+<!--</plugins>-->
+<!--</build>-->
+
+<!--<dependencies>-->
+<!--<dependency>-->
+<!--<groupId>org.testng</groupId>-->
+<!--<artifactId>testng</artifactId>-->
+<!--<version>6.14.2</version>-->
+<!--<scope>test</scope>-->
+<!--</dependency>-->
+
+<!--<dependency>-->
+<!--<groupId>com.codeborne</groupId>-->
+<!--<artifactId>selenide</artifactId>-->
+<!--<version>4.11.2</version>-->
+<!--<scope>test</scope>-->
+<!--</dependency>-->
+
+<!--<dependency>-->
+<!--<groupId>io.appium</groupId>-->
+<!--<artifactId>java-client</artifactId>-->
+<!--<version>4.1.2</version>-->
+<!--</dependency>-->
+
+<!--&lt;!&ndash;Need for create XML listener&ndash;&gt;-->
+<!--<dependency>-->
+<!--<groupId>org.reflections</groupId>-->
+<!--<artifactId>reflections</artifactId>-->
+<!--<version>0.9.11</version>-->
+<!--<exclusions>-->
+<!--<exclusion>-->
+<!--<artifactId>guava</artifactId>-->
+<!--<groupId>com.google.guava</groupId>-->
+<!--</exclusion>-->
+<!--</exclusions>-->
+<!--</dependency>-->
+
+<!--</dependencies>-->
+<!--</project>-->
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <groupId>com.wiley</groupId>
+    <artifactId>WAT_JF</artifactId>
+    <packaging>pom</packaging>
+    <name>WAT_JF</name>
+    <version>1.0</version>
 
-    <groupId>WEB-QA</groupId>
-    <artifactId>WEB-QA</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <description>Wiley Auto Testing Framework Template</description>
+    <organization>
+        <name>Wiley</name>
+        <url>http://www.wiley.com</url>
+    </organization>
 
-    <!--Default properties-->
     <properties>
-        <browser>firefox</browser>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java-version>1.8</java-version>
+
+        <application.host>wiley.ru</application.host>
+        <application.port>80</application.port>
+        <application.protocol>http://</application.protocol>
+        <application.selenium.timeout>30</application.selenium.timeout>
+        <application.selenium.driver>firefox</application.selenium.driver>
+        <application.platform>windows</application.platform>
+        <run.tests.with.grid>false</run.tests.with.grid>
+        <grid.hub.url>http://192.168.108.167:4444/wd/hub</grid.hub.url>
+        <run.tests.on>DEFAULT</run.tests.on>
+        <skip.test>true</skip.test>
+        <restart.driver.count>0</restart.driver.count>
+        <invocation.count>1</invocation.count>
+
+        <mavenSurefirePlugin.Xmx>2g</mavenSurefirePlugin.Xmx>
+        <mavenSurefirePlugin.PermSize>256m</mavenSurefirePlugin.PermSize>
+        <mavenSurefirePlugin.MaxPermSize>1024m</mavenSurefirePlugin.MaxPermSize>
+
+        <teasy.version>1.0.24-beta</teasy.version>
+
+        <org.springframework-version>4.2.4.RELEASE</org.springframework-version>
+        <aspectj.version>1.8.5</aspectj.version>
     </properties>
 
-    <profiles>
-        <profile>
-            <id>Chrome</id>
-            <properties>
-                <browser>${env.BROWSER}</browser>
-                <testNGPath>${basedir}/src/main/resources/testng/jenkins.xml</testNGPath>
-                <platform.env>${env.PLATFORM}</platform.env>
-            </properties>
-        </profile>
-    </profiles>
-
-    <!--Plugin set custom properties-->
     <build>
-        <!--DELETE-->
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -36,41 +163,7 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-
         <plugins>
-            <!--<plugin>-->
-            <!--<groupId>org.apache.maven.plugins</groupId>-->
-            <!--<artifactId>maven-surefire-plugin</artifactId>-->
-            <!--<version>2.16</version>-->
-            <!--<configuration>-->
-            <!--<systemPropertyVariables>-->
-            <!--<browser>${browser}</browser>-->
-            <!--<platform.env>${platform.env}</platform.env>-->
-            <!--<buildDirectory>${project.build.directory}</buildDirectory>-->
-            <!--</systemPropertyVariables>-->
-            <!--</configuration>-->
-            <!--</plugin>-->
-
-            <!--DELETE-->
-            <plugin>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>2.2.2</version>
-                <configuration>
-                    <mavenExecutorId>forked-path</mavenExecutorId>
-                    <useReleaseProfile>false</useReleaseProfile>
-                    <arguments>-Psonatype-oss-release</arguments>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                </configuration>
-            </plugin>
-
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
@@ -100,71 +193,474 @@
                     <target>${java-version}</target>
                 </configuration>
             </plugin>
-
-
-            <!--Plugin for create XML-->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.10</version>
-                <configuration>
-                    <argLine>-XX:PermSize=256m -XX:MaxPermSize=1024m</argLine>
-                    <skip>false</skip>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>${testNGPath}</suiteXmlFile>
-                    </suiteXmlFiles>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>integration-test</id>
-                        <goals>
-                            <goal>integration-test</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>verify</id>
-                        <goals>
-                            <goal>verify</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
 
+    <profiles>
+        <profile>
+            <id>run-unit-tests</id>
+            <activation>
+                <property>
+                    <name>full</name>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>run-unit-tests</id>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>test</goal>
+                                </goals>
+                                <configuration>
+                                    <skip>false</skip>
+                                    <excludedGroups>acceptance, smoke, core, implemented, inTesting,
+                                        inDevelopment
+                                    </excludedGroups>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>run-testsuite</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>run-unit-tests</id>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>test</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-failsafe-plugin</artifactId>
+                        <version>2.10</version>
+                        <configuration>
+                            <argLine>-XX:PermSize=256m -XX:MaxPermSize=1024m</argLine>
+                            <skip>false</skip>
+                            <suiteXmlFiles>
+                                <suiteXmlFile>${testNGPath}</suiteXmlFile>
+                            </suiteXmlFiles>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>integration-test</id>
+                                <goals>
+                                    <goal>integration-test</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>verify</id>
+                                <goals>
+                                    <goal>verify</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>example</id>
+            <properties>
+                <run.tests.on>DEFAULT</run.tests.on>
+                <testNGPath>${basedir}/src/test/resources/testng/example.xml</testNGPath>
+                <run.tests.with.grid>false</run.tests.with.grid>
+                <skip.test>false</skip.test>
+            </properties>
+        </profile>
+
+
+        <profile>
+            <id>Chrome</id>
+            <properties>
+                <run.tests.on>DEFAULT</run.tests.on>
+                <testNGPath>
+                    <testNGPath>${basedir}/src/main/resources/testng/jenkins.xml</testNGPath>
+                </testNGPath>
+                <browser>chrome</browser>
+                <platform.env>pc</platform.env>
+                <run.tests.with.grid>false</run.tests.with.grid>
+                <skip.test>false</skip.test>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>run-tests-in-ie</id>
+            <properties>
+                <application.selenium.timeout>60</application.selenium.timeout>
+                <application.selenium.driver>ie10</application.selenium.driver>
+                <testLink.platform.name>PC / IE10</testLink.platform.name>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>run-tests-in-ie11-grid</id>
+            <properties>
+                <run.tests.with.grid>true</run.tests.with.grid>
+                <application.selenium.timeout>60</application.selenium.timeout>
+                <application.selenium.driver>ie11</application.selenium.driver>
+                <testLink.platform.name>PC / IE11</testLink.platform.name>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>run-tests-in-ie10-grid</id>
+            <properties>
+                <run.tests.with.grid>true</run.tests.with.grid>
+                <application.selenium.timeout>60</application.selenium.timeout>
+                <application.selenium.driver>ie10</application.selenium.driver>
+                <testLink.platform.name>PC / IE10</testLink.platform.name>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>run-tests-in-ie9-grid</id>
+            <properties>
+                <run.tests.with.grid>true</run.tests.with.grid>
+                <application.selenium.timeout>60</application.selenium.timeout>
+                <application.selenium.driver>ie9</application.selenium.driver>
+                <testLink.platform.name>PC / IE9</testLink.platform.name>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>run-tests-in-chrome</id>
+            <properties>
+                <application.selenium.driver>chrome</application.selenium.driver>
+                <testLink.platform.name>PC / Chrome</testLink.platform.name>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>run-tests-in-safari</id>
+            <properties>
+                <application.selenium.driver>safari</application.selenium.driver>
+                <application.platform>mac</application.platform>
+                <testLink.platform.name>MAC / Safari</testLink.platform.name>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>run-tests-on-android</id>
+            <properties>
+                <run.tests.with.grid>true</run.tests.with.grid>
+                <application.selenium.driver>chrome</application.selenium.driver>
+                <application.platform>android</application.platform>
+                <grid.hub.url>http://localhost:4723/wd/hub</grid.hub.url>
+                <testLink.platform.name>Android / Chrome</testLink.platform.name>
+                <rational.platform>TE992</rational.platform>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>run-tests-on-ios-safari</id>
+            <properties>
+                <run.tests.with.grid>true</run.tests.with.grid>
+                <application.selenium.driver>safari</application.selenium.driver>
+                <application.platform>ios</application.platform>
+                <grid.hub.url>http://localhost:4723/wd/hub</grid.hub.url>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>run-tests-on-ios-chrome</id>
+            <properties>
+                <run.tests.with.grid>true</run.tests.with.grid>
+                <application.selenium.driver>chrome</application.selenium.driver>
+                <application.platform>ios</application.platform>
+                <grid.hub.url>http://localhost:4723/wd/hub</grid.hub.url>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>run-tests-with-grid</id>
+            <properties>
+                <run.tests.with.grid>true</run.tests.with.grid>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>run-tests-with-grid-local</id>
+            <properties>
+                <run.tests.with.grid>true</run.tests.with.grid>
+                <grid.hub.url>http://localhost:4444/wd/hub</grid.hub.url>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>jf_update_testrail_and_jira_status_by_test_method</id>
+            <properties>
+                <testNGPath>
+                    ${basedir}/src/test/resources/testng/integration/update_tr_and_jira_status_by_test_method.xml
+                </testNGPath>
+                <skip.test>false</skip.test>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>jf-update-passed-intesting</id>
+            <properties>
+                <testNGPath>
+                    ${basedir}/src/test/resources/testng/integration/jf-update-passed-intesting.xml
+                </testNGPath>
+                <skip.test>false</skip.test>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>jf-update-failed-implemented</id>
+            <properties>
+                <testNGPath>
+                    ${basedir}/src/test/resources/testng/integration/jf-update-failed-implemented.xml
+                </testNGPath>
+                <skip.test>false</skip.test>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>jf-move-to-failed</id>
+            <properties>
+                <testNGPath>
+                    ${basedir}/src/test/resources/testng/integration/jf-move-to-failed.xml
+                </testNGPath>
+                <skip.test>false</skip.test>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>jf_create_jira_tickets_for_new_testrail_cases</id>
+            <properties>
+                <testNGPath>
+                    ${basedir}/src/test/resources/testng/integration/create_jira_tickets_for_new_test_rail_cases.xml
+                </testNGPath>
+                <skip.test>false</skip.test>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>jf-delete-closed-issue</id>
+            <properties>
+                <testNGPath>
+                    ${basedir}/src/test/resources/testng/integration/jf-delete-closed-issue.xml
+                </testNGPath>
+                <skip.test>false</skip.test>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>test_rail_creator</id>
+            <properties>
+                <testNGPath>${basedir}/src/test/resources/testng/specified.xml</testNGPath>
+                <run.tests.with.grid>true</run.tests.with.grid>
+                <grid.hub.url>${env.GRID_HUB_URL}</grid.hub.url>
+                <application.selenium.driver>${env.BROWSER}</application.selenium.driver>
+                <run.tests.on>${env.ENVIRONMENT}</run.tests.on>
+                <included.groups>${env.INCLUDED_GROUPS}</included.groups>
+                <excluded.groups>${env.EXCLUDED_GROUPS}</excluded.groups>
+                <thread.count>${env.THREAD_COUNT}</thread.count>
+                <application.selenium.socketTimeout>600000</application.selenium.socketTimeout>
+                <skip.test>false</skip.test>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>environment-mock</id>
+            <properties>
+                <run.tests.on>MOCK</run.tests.on>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>environment-dev</id>
+            <properties>
+                <run.tests.on>DEV</run.tests.on>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>environment-qa</id>
+            <properties>
+                <run.tests.on>QA</run.tests.on>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>environment-devqa</id>
+            <properties>
+                <run.tests.on>DEVQA</run.tests.on>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>environment-uat</id>
+            <properties>
+                <run.tests.on>UAT</run.tests.on>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>jf_implemented</id>
+            <properties>
+                <testNGPath>${basedir}/src/test/resources/testng/grid/jf-implemented.xml
+                </testNGPath>
+                <run.tests.with.grid>true</run.tests.with.grid>
+                <grid.hub.url>${env.GRID_HUB_URL}</grid.hub.url>
+                <application.selenium.driver>${env.BROWSER}</application.selenium.driver>
+                <run.tests.on>${env.ENVIRONMENT}</run.tests.on>
+                <included.groups>${env.INCLUDED_GROUPS}</included.groups>
+                <excluded.groups>${env.EXCLUDED_GROUPS}</excluded.groups>
+                <thread.count>${env.THREAD_COUNT}</thread.count>
+                <application.selenium.socketTimeout>600000</application.selenium.socketTimeout>
+                <skip.test>false</skip.test>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>jf_intesting</id>
+            <properties>
+                <testNGPath>${basedir}/src/test/resources/testng/grid/jf-intesting.xml</testNGPath>
+                <run.tests.with.grid>true</run.tests.with.grid>
+                <grid.hub.url>${env.GRID_HUB_URL}</grid.hub.url>
+                <application.selenium.driver>${env.BROWSER}</application.selenium.driver>
+                <run.tests.on>${env.ENVIRONMENT}</run.tests.on>
+                <included.groups>${env.INCLUDED_GROUPS}</included.groups>
+                <excluded.groups>${env.EXCLUDED_GROUPS}</excluded.groups>
+                <thread.count>${env.THREAD_COUNT}</thread.count>
+                <application.selenium.socketTimeout>600000</application.selenium.socketTimeout>
+                <skip.test>false</skip.test>
+            </properties>
+        </profile>
+
+    </profiles>
+
     <dependencies>
+        <!--//TODO VE: fix issue with
+        //https://github.com/rest-assured/rest-assured/issues/657
+        //java.lang.NoClassDefFoundError: Lorg/apache/http/entity/mime/MultipartEntityBuilder restassured
+        //when we remove next dependeny it is taken from teasy where it is io.restassured-->
         <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>6.14.2</version>
-            <scope>test</scope>
+            <groupId>com.jayway.restassured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>2.9.0</version>
         </dependency>
 
         <dependency>
-            <groupId>com.codeborne</groupId>
-            <artifactId>selenide</artifactId>
-            <version>4.11.2</version>
-            <scope>test</scope>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.5</version>
         </dependency>
 
         <dependency>
-            <groupId>io.appium</groupId>
-            <artifactId>java-client</artifactId>
-            <version>4.1.2</version>
+            <groupId>org.reflections</groupId>
+            <artifactId>reflections</artifactId>
+            <version>0.9.11</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>guava</artifactId>
+                    <groupId>com.google.guava</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
-        <!--Need for create XML listener-->
         <dependency>
-        <groupId>org.reflections</groupId>
-        <artifactId>reflections</artifactId>
-        <version>0.9.11</version>
-        <exclusions>
-            <exclusion>
-                <artifactId>guava</artifactId>
-                <groupId>com.google.guava</groupId>
-            </exclusion>
-        </exclusions>
-    </dependency>
+            <groupId>com.codepine.api</groupId>
+            <artifactId>testrail-api-java-client</artifactId>
+            <version>2.0.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-databind</artifactId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>guava</artifactId>
+                    <groupId>com.google.guava</groupId>
+                </exclusion>
+            </exclusions>
 
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.wiley</groupId>
+            <artifactId>teasy</artifactId>
+            <version>${teasy.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.21.0-GA</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.wiley</groupId>
+            <artifactId>jira-rest-api</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.wiley.tes.qa</groupId>
+            <artifactId>integration</artifactId>
+            <version>1.0.19</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.cuanto</groupId>
+            <artifactId>cuanto-api</artifactId>
+            <version>2.9.b1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.cuanto</groupId>
+            <artifactId>cuanto-adapter</artifactId>
+            <version>2.9.b1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1.1</version>
+        </dependency>
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>codelds</id>
+            <url>https://code.lds.org/nexus/content/groups/main-repo</url>
+        </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+        <repository>
+            <id>central-releases</id>
+            <name>central-releases</name>
+            <url>http://192.168.108.200:8081/artifactory/libs-releases</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
 </project>
