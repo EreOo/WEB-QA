@@ -21,17 +21,6 @@
                 <browser>chrome</browser>
                 <testNGPath>${basedir}/src/main/resources/testng/jenkins.xml</testNGPath>
                 <platform.env>pc</platform.env>
-                <platform.os>windows</platform.os>
-            </properties>
-        </profile>
-
-        <profile>
-            <id>Jenkins</id>
-            <properties>
-                <browser>${env.BROWSER}</browser>
-                <testNGPath>${basedir}/src/main/resources/testng/jenkins.xml</testNGPath>
-                <platform.env>${env.DEVICE}</platform.env>
-                <platform.os>${env.PLATFORM}</platform.os>
             </properties>
         </profile>
     </profiles>
@@ -46,7 +35,6 @@
                 <configuration>
                     <systemPropertyVariables>
                         <browser>${browser}</browser>
-                        <platform.os>${platform.os}</platform.os>
                         <platform.env>${platform.env}</platform.env>
                         <buildDirectory>${project.build.directory}</buildDirectory>
                     </systemPropertyVariables>
