@@ -1,6 +1,7 @@
 package com.qaforpeople.functionality.tests;
 
 import com.qaforpeople.base.BaseTest;
+import org.testng.annotations.Test;
 
 
 /**
@@ -9,6 +10,7 @@ import com.qaforpeople.base.BaseTest;
 public class InputFieldsText extends BaseTest {
 
 
+    @Test
     public void checkFieldsText() {
         openSite()
                 .getInputFieldsBlock()

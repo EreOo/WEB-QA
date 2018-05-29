@@ -5,7 +5,6 @@ import com.qaforpeople.pages.MainPage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.close;
 import static com.codeborne.selenide.Selenide.open;
@@ -35,7 +34,7 @@ public class JenkinsGrid {
 
     }
 
-    @Test
+
     public void jenkinsTest() {
         open(SITE_URL);
         new MainPage().clickRedirectToSecondButton();
