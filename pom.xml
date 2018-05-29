@@ -21,6 +21,7 @@
                 <browser>chrome</browser>
                 <testNGPath>${basedir}/src/main/resources/testng/jenkins.xml</testNGPath>
                 <platform.env>pc</platform.env>
+                <hub>http://192.168.1.155:4444/wd/hub</hub>
             </properties>
         </profile>
     </profiles>
@@ -34,6 +35,7 @@
                 <version>2.16</version>
                 <configuration>
                     <systemPropertyVariables>
+                        <hub>${hub}</hub>
                         <browser>${browser}</browser>
                         <platform.env>${platform.env}</platform.env>
                         <buildDirectory>${project.build.directory}</buildDirectory>
