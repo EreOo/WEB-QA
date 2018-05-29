@@ -22,6 +22,7 @@
                 <testNGPath>${basedir}/src/main/resources/testng/jenkins.xml</testNGPath>
                 <platform.env>pc</platform.env>
                 <hub>http://192.168.1.155:4444/wd/hub</hub>
+                <thread>3</thread>
             </properties>
         </profile>
     </profiles>
@@ -36,6 +37,7 @@
                 <configuration>
                     <systemPropertyVariables>
                         <hub>${hub}</hub>
+                        <thread>${thread}</thread>
                         <browser>${browser}</browser>
                         <platform.env>${platform.env}</platform.env>
                         <buildDirectory>${project.build.directory}</buildDirectory>
