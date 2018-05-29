@@ -40,7 +40,7 @@ public class BaseTest {
 //        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 //        driver.manage().window().setPosition(new Point(220, 10));
 //        driver.manage().window().setSize(new Dimension(1000, 650));
-        Configuration.browser = "chrome";
+        Configuration.browser = System.getProperty("browser");
         Configuration.remote = "http://192.168.1.155:4444/wd/hub";
         System.setProperty("platform.env", "pc");
     }
