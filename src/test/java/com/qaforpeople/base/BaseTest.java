@@ -25,6 +25,7 @@ public class BaseTest {
      */
     @BeforeTest
     private void selectBrowser() {
+        Configuration.remote = "http://192.168.1.155:4444/wd/hub";
         Configuration.browser = System.getProperty("browser");
     }
 
