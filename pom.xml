@@ -12,6 +12,7 @@
     <properties>
         <browser>firefox</browser>
         <platform.env>pc</platform.env>
+        <testNGPath>${basedir}/src/main/resources/testng/jenkins.xml</testNGPath>
     </properties>
 
     <profiles>
