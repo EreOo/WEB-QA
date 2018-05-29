@@ -28,5 +28,7 @@ public class BaseTest {
         Configuration.browser = System.getProperty("browser");
         System.out.println("!!!!!!!!!!!!!!!!!!!!!!!" + System.getProperty("browser"));
         System.setProperty("platform", "Windows");
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!" + System.getProperty("platform"));
+
     }
 }
