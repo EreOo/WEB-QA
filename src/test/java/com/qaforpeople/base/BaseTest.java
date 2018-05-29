@@ -26,6 +26,7 @@ public class BaseTest {
         //It's localhost - but jenkins in container and it need your local ip
         Configuration.remote = "http://192.168.1.155:4444/wd/hub";
         Configuration.browser = System.getenv("BROWSER");
-        System.setProperty("platform", System.getenv("PLATFORM"));
+        System.out.print("!!!!!!!!!!!!!!!!!!!!!!!" + Configuration.browser);
+        System.setProperty("platform", "Windows");
     }
 }
