@@ -23,13 +23,6 @@ public class BaseTest {
      */
     @AfterSuite
     private void selectBrowser() {
-        //It's localhost - but jenkins in container and it need your local ip
-        Configuration.remote = "http://192.168.1.155:4444/wd/hub";
-        //  Configuration.browser = "chrome";
-        System.setProperty("browser", "chrome");
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!" + System.getProperty("browser"));
-        System.setProperty("platform", "Windows");
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!" + System.getProperty("platform"));
-
+        Configuration.browser = System.getProperty("browser");
     }
 }
