@@ -38,6 +38,7 @@ public class JenkinsGrid {
     public void jenkinsTest() {
         open(SITE_URL);
         new MainPage().clickRedirectToSecondButton();
+        System.out.println("!!!!!!!!!!!!!!!!TEST END !!!!!!!!!!!!!!!!!!!!!!!!");
     }
 
     @AfterTest
