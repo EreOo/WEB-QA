@@ -31,6 +31,7 @@ public class JenkinsGrid {
 //        driver.manage().window().setSize(new Dimension(1000, 650));
         Configuration.browser = "chrome";
         Configuration.remote = "http://192.168.1.155:4444/wd/hub";
+        System.setProperty("platform.env", "pc");
 
     }
 
